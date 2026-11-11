@@ -42,7 +42,7 @@
     "highlight.js": "^11.11.0"
   },
   "devDependencies": {
-    "glob": "^11.0.0",
+    "glob": "^14.0.4",
     "highlight.js": "^11.11.1",
     "mocha": "^11.2.2",
     "rollup": "^4.0.2",
