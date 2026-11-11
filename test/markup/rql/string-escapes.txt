@@ -1,0 +1,1 @@
+from Orders where Name = "say \"hi\"" and Alias = 'it\'s'

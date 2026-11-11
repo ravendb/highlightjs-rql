@@ -100,8 +100,8 @@ function rql(hljs) {
   const STRING = {
     scope: "string",
     variants: [
-      { begin: '"', end: '"' },
-      { begin: "'", end: "'" },
+      { begin: '"', end: '"', contains: [ hljs.BACKSLASH_ESCAPE ] },
+      { begin: "'", end: "'", contains: [ hljs.BACKSLASH_ESCAPE ] },
       // apache-drill style string, also used by RQL
       { begin: "`", end: "`" }
     ]
