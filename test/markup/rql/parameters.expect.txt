@@ -1,0 +1,4 @@
+<span class="hljs-keyword">from</span> Orders
+<span class="hljs-keyword">where</span> Company = <span class="hljs-variable">$company</span> <span class="hljs-keyword">and</span> Freight <span class="hljs-keyword">between</span> <span class="hljs-variable">$min</span> <span class="hljs-keyword">and</span> <span class="hljs-variable">$max</span>
+   <span class="hljs-keyword">and</span> ShipTo.City <span class="hljs-keyword">in</span> (<span class="hljs-variable">$city1</span>, <span class="hljs-variable">$city2</span>)
+<span class="hljs-keyword">limit</span> <span class="hljs-variable">$skip</span>, <span class="hljs-variable">$take</span>

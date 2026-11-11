@@ -1,0 +1,12 @@
+<span class="hljs-keyword">declare</span> <span class="hljs-keyword">timeseries</span> <span class="hljs-title function_">lastWeek</span>(e) <span class="hljs-punctuation">{</span>
+    <span class="hljs-keyword">from</span> e.HeartRates
+    <span class="hljs-keyword">last</span> <span class="hljs-number">7</span> <span class="hljs-type">days</span>
+    <span class="hljs-keyword">load Tag</span> <span class="hljs-keyword">as</span> src
+    <span class="hljs-keyword">where</span> src.Name = <span class="hljs-string">&#x27;watches/fitbit&#x27;</span> <span class="hljs-keyword">and</span> Value &gt; <span class="hljs-number">60</span>
+    <span class="hljs-keyword">select</span> <span class="hljs-built_in">min</span>(), <span class="hljs-built_in">max</span>(), <span class="hljs-built_in">percentile</span>(<span class="hljs-number">90</span>)
+    <span class="hljs-keyword">scale</span> <span class="hljs-number">0.5</span>
+<span class="hljs-punctuation">}</span>
+
+<span class="hljs-keyword">from</span> Employees <span class="hljs-keyword">as</span> e
+<span class="hljs-keyword">select</span> e.FirstName, lastWeek(e)
+<span class="hljs-keyword">include</span> <span class="hljs-keyword">timeseries</span>(<span class="hljs-string">&#x27;HeartRates&#x27;</span>, <span class="hljs-built_in">last</span>(<span class="hljs-number">5</span>, <span class="hljs-string">&#x27;minutes&#x27;</span>))

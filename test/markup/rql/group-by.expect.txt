@@ -1,0 +1,5 @@
+<span class="hljs-keyword">from</span> Orders
+<span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> Employee, Company
+<span class="hljs-keyword">where</span> Freight &gt;= <span class="hljs-number">10</span>
+<span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-built_in">count</span>() <span class="hljs-keyword">as</span> <span class="hljs-type">long</span> <span class="hljs-type">desc</span>
+<span class="hljs-keyword">select</span> Employee, Company, <span class="hljs-built_in">count</span>() <span class="hljs-keyword">as</span> Orders, <span class="hljs-built_in">sum</span>(Freight) <span class="hljs-keyword">as</span> TotalFreight

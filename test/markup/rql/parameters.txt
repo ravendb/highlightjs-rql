@@ -1,0 +1,4 @@
+from Orders
+where Company = $company and Freight between $min and $max
+   and ShipTo.City in ($city1, $city2)
+limit $skip, $take

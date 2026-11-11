@@ -1,0 +1,6 @@
+from Orders as o
+where o.Freight > 100
+update {
+    o.Priority = "high";
+    o.Lines.forEach(l => { l.Discount = 0.05; });
+}

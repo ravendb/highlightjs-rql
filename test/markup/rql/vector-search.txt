@@ -1,2 +1,4 @@
-from Products
-where vector.search(embedding.text(Description), $query)
+from Categories
+where vector.search(embedding.text(Description), $query, 0.85)
+select Name, Description
+limit 5

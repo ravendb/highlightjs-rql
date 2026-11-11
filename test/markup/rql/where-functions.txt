@@ -1,2 +1,4 @@
 from Products
 where search(Name, "chocolate") and boost(Discontinued = false, 2)
+   or startsWith(Name, 'Ch') and exists(Supplier)
+   and PricePerUnit between 10 and 50

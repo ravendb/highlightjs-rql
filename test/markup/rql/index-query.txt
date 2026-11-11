@@ -1,0 +1,4 @@
+from index 'Orders/Totals'
+where Total > 1000 and Employee != 'employees/9-A'
+order by Total as double desc, Employee asc nulls last
+limit 20, 10

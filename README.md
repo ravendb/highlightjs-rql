@@ -10,15 +10,20 @@ RQL is the SQL-like query language of [RavenDB](https://ravendb.net), a document
 - Clauses and keywords: `from`, `where`, `group by`, `order by`, `select`, `load`, `include`, `update`, `declare`, `with`, `limit`, ...
 - Logical operators, type casts (`as string/long/double/alphaNumeric`) and order options (`asc`, `desc`, `nulls first/last`)
 - Functions usable in `where` and `order by`, including the vector search and AI functions (`vector.search`, `embedding.*`, `ai.task`)
-- Literals, numbers, and the special tokens `@metadata` and `@all_docs`
+- Query parameters (`$name`, `$p0`), literals, numbers, and the special tokens `@metadata` and `@all_docs`
+- Spatial functions (`spatial.within`, `spatial.point`, `spatial.circle`, ...)
+- Time series queries, both `timeseries( from ... )` and `declare timeseries name(x) { ... }`, with their own keywords (`between`, `first`/`last N days`, `group by '1 days'`, `with interpolation(...)`, `load Tag`, `scale`) and methods (`min()`, `max()`, `average()`, `percentile(n)`, ...)
+- The JavaScript blocks of `select { ... }`, `update { ... }` and `declare function name(x) { ... }`, with light JavaScript highlighting (strings, comments, numbers, common keywords, nested braces)
 
 Matching is case insensitive, like RQL.
 
-The keyword, function and operator lists are derived from RavenDB's own tooling: the tokenizer of the Studio query editor and the ANTLR4 grammar of its autocomplete service, both in [ravendb/ravendb](https://github.com/ravendb/ravendb).
+The keyword, function and operator lists are derived from RavenDB's own tooling: the lexer and parser of the Studio query editor (identical in v7.2 and v8.0), in [ravendb/ravendb](https://github.com/ravendb/ravendb). The grammar was also run against the 2,258 queries of the Studio's own language-service test data, without errors.
+
+The examples in `test/markup/rql` use the Northwind sample database that ships with the RavenDB Studio.
 
 ### Known limitation
 
-`select { ... }` and `update { ... }` can embed JavaScript patch scripts. They are highlighted as plain RQL, without a JavaScript sub-mode.
+The embedded JavaScript is highlighted with a small built-in rule set, not with the full highlight.js JavaScript grammar. Template literals with `${...}` and regex literals are not parsed.
 
 ## Usage
 

@@ -1,0 +1,3 @@
+from @all_docs
+where @metadata.@collection = 'Orders'
+select @metadata.@id, @metadata.@last-modified

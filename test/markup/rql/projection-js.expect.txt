@@ -1,0 +1,9 @@
+<span class="hljs-keyword">from</span> Orders <span class="hljs-keyword">as</span> o
+<span class="hljs-keyword">load</span> o.Company <span class="hljs-keyword">as</span> c, o.Employee <span class="hljs-keyword">as</span> e
+<span class="hljs-keyword">select</span> <span class="hljs-punctuation">{</span>
+    Company: c.Name,
+    Employee: e.FirstName + <span class="hljs-string">&quot; &quot;</span> + e.LastName,
+    Total: o.Lines.reduce((acc, l) =&gt; acc + l.PricePerUnit * l.Quantity, <span class="hljs-number">0</span>),
+    Items: o.Lines.map(<span class="hljs-keyword">function</span> (l) { <span class="hljs-keyword">return</span> { Name: l.ProductName, Qty: l.Quantity }; })
+<span class="hljs-punctuation">}</span>
+<span class="hljs-keyword">limit</span> <span class="hljs-number">10</span>

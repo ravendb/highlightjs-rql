@@ -1,0 +1,12 @@
+declare timeseries lastWeek(e) {
+    from e.HeartRates
+    last 7 days
+    load Tag as src
+    where src.Name = 'watches/fitbit' and Value > 60
+    select min(), max(), percentile(90)
+    scale 0.5
+}
+
+from Employees as e
+select e.FirstName, lastWeek(e)
+include timeseries('HeartRates', last(5, 'minutes'))

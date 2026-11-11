@@ -1,4 +1,6 @@
-<span class="hljs-keyword">from</span> Orders as o
-<span class="hljs-keyword">where</span> o.Company = <span class="hljs-string">&quot;companies/1-A&quot;</span>
-<span class="hljs-keyword">select</span> o.OrderedAt, o.ShipTo
-<span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> o.OrderedAt <span class="hljs-type">desc</span>
+<span class="hljs-comment">// Orders shipped to Brazil, biggest freight first</span>
+<span class="hljs-keyword">from</span> Orders <span class="hljs-keyword">as</span> o
+<span class="hljs-keyword">where</span> o.ShipTo.Country = <span class="hljs-string">&quot;Brazil&quot;</span> <span class="hljs-keyword">and</span> o.Freight &gt; <span class="hljs-number">50</span>
+<span class="hljs-keyword">select</span> o.OrderedAt, o.ShipTo.City, o.Freight
+<span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> o.Freight <span class="hljs-type">desc</span>
+<span class="hljs-keyword">limit</span> <span class="hljs-number">10</span>

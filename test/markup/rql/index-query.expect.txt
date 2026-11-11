@@ -1,0 +1,4 @@
+<span class="hljs-keyword">from</span> <span class="hljs-keyword">index</span> <span class="hljs-string">&#x27;Orders/Totals&#x27;</span>
+<span class="hljs-keyword">where</span> Total &gt; <span class="hljs-number">1000</span> <span class="hljs-keyword">and</span> Employee != <span class="hljs-string">&#x27;employees/9-A&#x27;</span>
+<span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> Total <span class="hljs-keyword">as</span> <span class="hljs-type">double</span> <span class="hljs-type">desc</span>, Employee <span class="hljs-type">asc</span> <span class="hljs-keyword">nulls last</span>
+<span class="hljs-keyword">limit</span> <span class="hljs-number">20</span>, <span class="hljs-number">10</span>

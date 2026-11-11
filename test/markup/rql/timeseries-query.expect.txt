@@ -1,0 +1,9 @@
+<span class="hljs-keyword">from</span> Employees <span class="hljs-keyword">as</span> e
+<span class="hljs-keyword">where</span> e.Title = <span class="hljs-string">&#x27;Sales Representative&#x27;</span>
+<span class="hljs-keyword">select</span> e.FirstName, <span class="hljs-keyword">timeseries</span>(
+    <span class="hljs-keyword">from</span> e.HeartRates
+    <span class="hljs-keyword">between</span> <span class="hljs-variable">$from</span> <span class="hljs-keyword">and</span> <span class="hljs-variable">$to</span>
+    <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27;1 days&#x27;</span>
+    <span class="hljs-keyword">with</span> <span class="hljs-keyword">interpolation</span>(<span class="hljs-type">Linear</span>)
+    <span class="hljs-keyword">select</span> <span class="hljs-built_in">average</span>(), <span class="hljs-built_in">max</span>()
+) <span class="hljs-keyword">as</span> Daily

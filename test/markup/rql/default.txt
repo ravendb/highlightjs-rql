@@ -1,4 +1,6 @@
+// Orders shipped to Brazil, biggest freight first
 from Orders as o
-where o.Company = "companies/1-A"
-select o.OrderedAt, o.ShipTo
-order by o.OrderedAt desc
+where o.ShipTo.Country = "Brazil" and o.Freight > 50
+select o.OrderedAt, o.ShipTo.City, o.Freight
+order by o.Freight desc
+limit 10

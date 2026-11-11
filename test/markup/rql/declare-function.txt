@@ -1,0 +1,6 @@
+declare function fullName(e) {
+    return e.FirstName + " " + e.LastName;
+}
+
+from Employees as e
+select fullName(e) as Name, e.Title

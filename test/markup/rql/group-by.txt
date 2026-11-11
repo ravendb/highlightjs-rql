@@ -1,0 +1,5 @@
+from Orders
+group by Employee, Company
+where Freight >= 10
+order by count() as long desc
+select Employee, Company, count() as Orders, sum(Freight) as TotalFreight

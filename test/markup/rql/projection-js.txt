@@ -1,0 +1,9 @@
+from Orders as o
+load o.Company as c, o.Employee as e
+select {
+    Company: c.Name,
+    Employee: e.FirstName + " " + e.LastName,
+    Total: o.Lines.reduce((acc, l) => acc + l.PricePerUnit * l.Quantity, 0),
+    Items: o.Lines.map(function (l) { return { Name: l.ProductName, Qty: l.Quantity }; })
+}
+limit 10

@@ -1,1 +1,1 @@
-<span class="hljs-keyword">from</span> Orders <span class="hljs-keyword">where</span> Name = <span class="hljs-string">&quot;say \&quot;hi\&quot;&quot;</span> <span class="hljs-keyword">and</span> Alias = <span class="hljs-string">&#x27;it\&#x27;s&#x27;</span>
+<span class="hljs-keyword">from</span> Companies <span class="hljs-keyword">where</span> Name = <span class="hljs-string">&quot;The \&quot;Cruz\&quot; Shop&quot;</span> <span class="hljs-keyword">or</span> Contact.Name = <span class="hljs-string">&#x27;D\&#x27;Arcy&#x27;</span>

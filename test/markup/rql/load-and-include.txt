@@ -1,0 +1,5 @@
+from Orders as o
+load o.Company as c, o.Employee as e
+where c.Address.Country = 'Germany'
+select o.OrderedAt, c.Name, e.LastName
+include o.Company, o.Employee

@@ -1,0 +1,5 @@
+from Companies
+where spatial.within(
+    spatial.point(Address.Location.Latitude, Address.Location.Longitude),
+    spatial.circle(10, 47.6, -122.3)
+)

@@ -1,2 +1,4 @@
-<span class="hljs-keyword">from</span> Products
-<span class="hljs-keyword">where</span> <span class="hljs-built_in">vector.search</span>(<span class="hljs-built_in">embedding.text</span>(Description), $query)
+<span class="hljs-keyword">from</span> Categories
+<span class="hljs-keyword">where</span> <span class="hljs-built_in">vector.search</span>(<span class="hljs-built_in">embedding.text</span>(Description), <span class="hljs-variable">$query</span>, <span class="hljs-number">0.85</span>)
+<span class="hljs-keyword">select</span> Name, Description
+<span class="hljs-keyword">limit</span> <span class="hljs-number">5</span>

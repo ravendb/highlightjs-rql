@@ -1,0 +1,6 @@
+<span class="hljs-keyword">from</span> Orders <span class="hljs-keyword">as</span> o
+<span class="hljs-keyword">where</span> o.Freight &gt; <span class="hljs-number">100</span>
+<span class="hljs-keyword">update</span> <span class="hljs-punctuation">{</span>
+    o.Priority = <span class="hljs-string">&quot;high&quot;</span>;
+    o.Lines.forEach(l =&gt; { l.Discount = <span class="hljs-number">0.05</span>; });
+<span class="hljs-punctuation">}</span>

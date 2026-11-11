@@ -1,0 +1,3 @@
+<span class="hljs-keyword">from</span> <span class="hljs-symbol">@all_docs</span>
+<span class="hljs-keyword">where</span> <span class="hljs-symbol">@metadata</span>.@collection = <span class="hljs-string">&#x27;Orders&#x27;</span>
+<span class="hljs-keyword">select</span> <span class="hljs-symbol">@metadata</span>.@id, <span class="hljs-symbol">@metadata</span>.@last-modified

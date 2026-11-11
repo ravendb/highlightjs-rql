@@ -1,0 +1,5 @@
+<span class="hljs-keyword">from</span> Orders <span class="hljs-keyword">as</span> o
+<span class="hljs-keyword">load</span> o.Company <span class="hljs-keyword">as</span> c, o.Employee <span class="hljs-keyword">as</span> e
+<span class="hljs-keyword">where</span> c.Address.Country = <span class="hljs-string">&#x27;Germany&#x27;</span>
+<span class="hljs-keyword">select</span> o.OrderedAt, c.Name, e.LastName
+<span class="hljs-keyword">include</span> o.Company, o.Employee

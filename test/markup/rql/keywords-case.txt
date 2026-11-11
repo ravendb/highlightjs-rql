@@ -1,0 +1,4 @@
+FROM Orders AS o
+WHERE o.Freight > 10 AND NOT o.ShipTo.Country = 'France'
+ORDER BY o.Freight DESC NULLS FIRST
+SELECT DISTINCT o.Employee

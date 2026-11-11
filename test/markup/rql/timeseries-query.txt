@@ -1,0 +1,9 @@
+from Employees as e
+where e.Title = 'Sales Representative'
+select e.FirstName, timeseries(
+    from e.HeartRates
+    between $from and $to
+    group by '1 days'
+    with interpolation(Linear)
+    select average(), max()
+) as Daily

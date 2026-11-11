@@ -1,0 +1,5 @@
+<span class="hljs-keyword">from</span> Companies
+<span class="hljs-keyword">where</span> <span class="hljs-built_in">spatial.within</span>(
+    <span class="hljs-built_in">spatial.point</span>(Address.Location.Latitude, Address.Location.Longitude),
+    <span class="hljs-built_in">spatial.circle</span>(<span class="hljs-number">10</span>, <span class="hljs-number">47.6</span>, <span class="hljs-number">-122.3</span>)
+)

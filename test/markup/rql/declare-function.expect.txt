@@ -1,0 +1,6 @@
+<span class="hljs-keyword">declare</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">fullName</span>(e) <span class="hljs-punctuation">{</span>
+    <span class="hljs-keyword">return</span> e.FirstName + <span class="hljs-string">&quot; &quot;</span> + e.LastName;
+<span class="hljs-punctuation">}</span>
+
+<span class="hljs-keyword">from</span> Employees <span class="hljs-keyword">as</span> e
+<span class="hljs-keyword">select</span> fullName(e) <span class="hljs-keyword">as</span> Name, e.Title
