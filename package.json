@@ -1,0 +1,51 @@
+{
+  "name": "highlightjs-rql",
+  "version": "1.0.0",
+  "description": "RQL (RavenDB Query Language) grammar for highlight.js",
+  "type": "module",
+  "main": "dist/rql.cjs",
+  "module": "dist/rql.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/rql.es.js",
+      "require": "./dist/rql.cjs"
+    }
+  },
+  "files": [
+    "src",
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "pretest": "npm run build",
+    "test": "mocha",
+    "test-markup": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leadsoftlucas/highlightjs-rql.git"
+  },
+  "keywords": [
+    "highlight.js",
+    "highlightjs",
+    "syntax",
+    "rql",
+    "ravendb"
+  ],
+  "author": "Lucas R. Tavares",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leadsoftlucas/highlightjs-rql/issues"
+  },
+  "homepage": "https://github.com/leadsoftlucas/highlightjs-rql#readme",
+  "peerDependencies": {
+    "highlight.js": "^11.11.0"
+  },
+  "devDependencies": {
+    "glob": "^11.0.0",
+    "highlight.js": "^11.11.1",
+    "mocha": "^11.2.2",
+    "rollup": "^4.0.2",
+    "should": "^13.2.3"
+  }
+}
