@@ -85,3 +85,9 @@ Commit the generated `dist/` files.
 ## License
 
 MIT. See [LICENSE](LICENSE).
+
+## Releasing (maintainers)
+
+1. Bump `version` in `package.json`, run `npm test` and commit the updated `dist/`.
+2. Create a GitHub release with the tag `v<version>` (for example `v1.0.1`).
+3. The `Publish to npm` workflow tests the package and publishes it. It needs the `NPM_TOKEN` repository secret.

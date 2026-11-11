@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leadsoftlucas/highlightjs-rql.git"
+    "url": "git+https://github.com/ravendb/highlightjs-rql.git"
   },
   "keywords": [
     "highlight.js",
@@ -35,9 +35,9 @@
   "author": "Lucas R. Tavares",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/leadsoftlucas/highlightjs-rql/issues"
+    "url": "https://github.com/ravendb/highlightjs-rql/issues"
   },
-  "homepage": "https://github.com/leadsoftlucas/highlightjs-rql#readme",
+  "homepage": "https://github.com/ravendb/highlightjs-rql#readme",
   "peerDependencies": {
     "highlight.js": "^11.11.0"
   },
